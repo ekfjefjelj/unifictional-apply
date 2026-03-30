@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Internships — Unifictional</title>
+  <title>Apply — Unifictional Internships</title>
   <meta name="description" content="Performance-based internships at Unifictional. Real clients. Real work. Real pay." />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -63,84 +63,68 @@
     }
     .nav-link:hover { color: var(--gold); }
 
-    /* ── HERO ── */
-    .hero {
-      padding: 160px 40px 80px;
+    /* ── PAGE HEADER ── */
+    .page-header {
+      padding: 108px 40px 40px;
       max-width: 860px;
       margin: 0 auto;
+      border-bottom: 1px solid var(--border);
     }
-    .hero-label {
+    .page-label {
       font-size: 11px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 24px;
+      margin-bottom: 14px;
     }
-    .hero h1 {
-      font-size: clamp(40px, 6vw, 72px);
+    .page-header h1 {
+      font-size: clamp(30px, 5vw, 52px);
       font-weight: 800;
-      line-height: 1.05;
+      line-height: 1.06;
       letter-spacing: -0.02em;
       color: var(--white);
-      margin-bottom: 24px;
+      margin-bottom: 10px;
     }
-    .hero h1 em {
-      font-style: normal;
-      color: var(--gold);
-    }
-    .hero-sub {
-      font-size: 18px;
+    .page-header p {
+      font-size: 15px;
       color: var(--mid);
-      max-width: 480px;
-      line-height: 1.65;
-    }
-    .hero-rule {
-      width: 48px;
-      height: 2px;
-      background: var(--gold);
-      margin: 40px 0;
-    }
-    .hero-stats {
-      display: flex;
-      gap: 48px;
-      flex-wrap: wrap;
-    }
-    .stat-label {
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--mid);
-      margin-bottom: 4px;
-    }
-    .stat-value {
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--white);
     }
 
-    /* ── ROLES GRID ── */
-    .roles-section {
-      padding: 80px 40px;
+    /* ── MAIN LAYOUT ── */
+    .main-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
       max-width: 860px;
       margin: 0 auto;
     }
+    .col-left {
+      padding: 48px 40px 80px 40px;
+      border-right: 1px solid var(--border);
+    }
+    .col-right {
+      padding: 48px 40px 80px 48px;
+    }
+
+    /* ── ROLES ── */
     .section-label {
-      font-size: 11px;
+      font-size: 10px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 40px;
+      margin-bottom: 20px;
     }
     .roles-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      display: flex;
+      flex-direction: column;
       gap: 1px;
       background: var(--border);
       border: 1px solid var(--border);
+      margin-bottom: 36px;
     }
     .role-card {
       background: var(--surface);
-      padding: 32px;
+      padding: 20px 24px;
       cursor: pointer;
       transition: background 0.2s;
       position: relative;
@@ -159,94 +143,72 @@
     .role-card.active { background: #161513; }
     .role-card.active::before { height: 100%; }
     .role-num {
-      font-size: 10px;
+      font-size: 9px;
       letter-spacing: 0.15em;
       color: var(--gold-dim);
-      margin-bottom: 12px;
+      margin-bottom: 4px;
       font-family: 'Courier New', monospace;
     }
     .role-title {
-      font-size: 18px;
+      font-size: 15px;
       font-weight: 700;
       color: var(--white);
-      margin-bottom: 8px;
+      margin-bottom: 4px;
     }
     .role-desc {
-      font-size: 13px;
+      font-size: 12px;
       color: var(--mid);
-      line-height: 1.6;
-      margin-bottom: 20px;
+      line-height: 1.5;
+      margin-bottom: 10px;
     }
     .role-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px;
+      gap: 5px;
     }
     .tag {
-      font-size: 10px;
+      font-size: 9px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--gold);
       border: 1px solid var(--gold-dim);
-      padding: 3px 8px;
+      padding: 2px 7px;
     }
 
-    /* ── APPLY FORM ── */
-    .apply-section {
-      padding: 80px 40px 120px;
-      max-width: 860px;
-      margin: 0 auto;
-    }
-    .apply-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
-    }
-    @media (max-width: 720px) {
-      .apply-inner { grid-template-columns: 1fr; gap: 48px; }
-      nav { padding: 16px 20px; }
-      .hero { padding: 120px 20px 60px; }
-      .roles-section, .apply-section { padding-left: 20px; padding-right: 20px; }
-      .hero-stats { gap: 28px; }
-    }
-
-    .apply-copy h2 {
-      font-size: 32px;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 16px;
-      line-height: 1.1;
-    }
-    .apply-copy p {
-      font-size: 14px;
-      color: var(--mid);
-      line-height: 1.7;
-      margin-bottom: 32px;
-    }
+    /* ── CHECKLIST ── */
     .apply-checklist {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 10px;
     }
     .apply-checklist li {
-      font-size: 13px;
+      font-size: 12px;
       color: var(--mid);
       display: flex;
-      gap: 12px;
+      gap: 10px;
       align-items: flex-start;
     }
     .apply-checklist li::before {
       content: '→';
       color: var(--gold);
       flex-shrink: 0;
-      margin-top: 1px;
     }
 
-    /* Form */
-    form { display: flex; flex-direction: column; gap: 20px; }
-    .field { display: flex; flex-direction: column; gap: 6px; }
+    /* ── FORM ── */
+    .form-title {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+    .form-sub {
+      font-size: 13px;
+      color: var(--mid);
+      margin-bottom: 28px;
+    }
+    form { display: flex; flex-direction: column; gap: 18px; }
+    .field { display: flex; flex-direction: column; gap: 5px; }
     label {
       font-size: 10px;
       letter-spacing: 0.14em;
@@ -258,7 +220,7 @@
       border: 1px solid var(--border);
       color: var(--white);
       font-size: 14px;
-      padding: 12px 14px;
+      padding: 11px 13px;
       outline: none;
       font-family: inherit;
       transition: border-color 0.2s;
@@ -266,19 +228,17 @@
       border-radius: 0;
       -webkit-appearance: none;
     }
-    input:focus, select:focus, textarea:focus {
-      border-color: var(--gold);
-    }
+    input:focus, select:focus, textarea:focus { border-color: var(--gold); }
     input::placeholder, textarea::placeholder { color: var(--dim); }
     select { cursor: pointer; }
     select option { background: #111; }
-    textarea { resize: vertical; min-height: 110px; }
+    textarea { resize: vertical; min-height: 100px; }
 
     .submit-btn {
       background: var(--gold);
       color: #0C0C0B;
       border: none;
-      padding: 14px 28px;
+      padding: 13px 26px;
       font-size: 13px;
       font-weight: 800;
       letter-spacing: 0.08em;
@@ -290,18 +250,13 @@
     .submit-btn:hover { background: #DDB52D; }
     .submit-btn:active { transform: scale(0.98); }
     .submit-btn:disabled { background: var(--dim); cursor: not-allowed; transform: none; }
+    .form-error { font-size: 12px; color: var(--red); display: none; }
 
-    .form-error {
-      font-size: 12px;
-      color: var(--red);
-      display: none;
-    }
-
-    /* ── SUCCESS STATE ── */
+    /* ── SUCCESS ── */
     .success-state {
       display: none;
       flex-direction: column;
-      gap: 16px;
+      gap: 14px;
     }
     .success-state.visible { display: flex; }
     .success-icon {
@@ -310,32 +265,33 @@
       display: flex; align-items: center; justify-content: center;
       font-size: 18px; color: var(--gold);
     }
-    .success-state h3 {
-      font-size: 22px;
-      font-weight: 700;
-    }
-    .success-state p { font-size: 14px; color: var(--mid); }
+    .success-state h3 { font-size: 20px; font-weight: 700; }
+    .success-state p { font-size: 13px; color: var(--mid); }
 
     /* ── FOOTER ── */
     footer {
       border-top: 1px solid var(--border);
-      padding: 32px 40px;
+      padding: 28px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
       gap: 12px;
+      max-width: 860px;
+      margin: 0 auto;
     }
     footer p { font-size: 12px; color: var(--dim); }
     footer a { color: var(--mid); text-decoration: none; font-size: 12px; }
     footer a:hover { color: var(--gold); }
 
-    /* ── DIVIDER ── */
-    .section-divider {
-      border: none;
-      border-top: 1px solid var(--border);
-      max-width: 860px;
-      margin: 0 auto;
+    /* ── RESPONSIVE ── */
+    @media (max-width: 720px) {
+      nav { padding: 16px 20px; }
+      .page-header { padding: 90px 20px 32px; }
+      .main-layout { grid-template-columns: 1fr; }
+      .col-left { border-right: none; border-bottom: 1px solid var(--border); padding: 36px 20px 40px; }
+      .col-right { padding: 36px 20px 60px; }
+      footer { padding: 24px 20px; }
     }
   </style>
 </head>
@@ -344,152 +300,126 @@
   <!-- NAV -->
   <nav>
     <a href="https://unifictional.com" class="nav-logo">Uni<span>fictional</span></a>
-    <a href="#apply" class="nav-link">Apply Now</a>
+    <a href="https://unifictional.com" class="nav-link">← Back to site</a>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <p class="hero-label">Unifictional LLC · 2026 Internship Program</p>
-    <h1>You weren't<br/>supposed to<br/>see <em>this.</em></h1>
-    <div class="hero-rule"></div>
-    <p class="hero-sub">We don't post jobs. This one slipped through. Performance-based pay. Real clients. Real work from day one.</p>
-    <div style="height: 40px;"></div>
-    <div class="hero-stats">
-      <div>
-        <p class="stat-label">Compensation</p>
-        <p class="stat-value">Performance-based</p>
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <p class="page-label">Unifictional LLC · 2026 Internship Program</p>
+    <h1>Apply for an internship.</h1>
+    <p>Performance-based pay. Real clients. Real work from day one.</p>
+  </div>
+
+  <!-- MAIN: roles left, form right -->
+  <div class="main-layout">
+
+    <!-- LEFT: roles + perks -->
+    <div class="col-left">
+      <p class="section-label">Open Positions — Click to apply</p>
+      <div class="roles-grid" id="rolesGrid">
+
+        <div class="role-card" data-role="Sales Intern" onclick="selectRole(this)">
+          <p class="role-num">01 //</p>
+          <h3 class="role-title">Sales Intern</h3>
+          <p class="role-desc">Close deals. Build a book of business. You own the pipeline from first contact to signed contract.</p>
+          <div class="role-tags">
+            <span class="tag">Outbound</span>
+            <span class="tag">CRM</span>
+            <span class="tag">Commission</span>
+          </div>
+        </div>
+
+        <div class="role-card" data-role="Lead Generation Intern" onclick="selectRole(this)">
+          <p class="role-num">02 //</p>
+          <h3 class="role-title">Lead Generation Intern</h3>
+          <p class="role-desc">Find the right people. Research, qualify, and feed a steady pipeline of vetted prospects to the sales team.</p>
+          <div class="role-tags">
+            <span class="tag">Research</span>
+            <span class="tag">Prospecting</span>
+            <span class="tag">Data</span>
+          </div>
+        </div>
+
+        <div class="role-card" data-role="Marketing Intern" onclick="selectRole(this)">
+          <p class="role-num">03 //</p>
+          <h3 class="role-title">Marketing Intern</h3>
+          <p class="role-desc">Build campaigns that convert. Own messaging, positioning, and the growth engine behind our client acquisition.</p>
+          <div class="role-tags">
+            <span class="tag">Campaigns</span>
+            <span class="tag">Copy</span>
+            <span class="tag">Growth</span>
+          </div>
+        </div>
+
+        <div class="role-card" data-role="Social Media Intern" onclick="selectRole(this)">
+          <p class="role-num">04 //</p>
+          <h3 class="role-title">Social Media Intern</h3>
+          <p class="role-desc">Make things people actually share. You're not scheduling posts — you're building a presence that moves.</p>
+          <div class="role-tags">
+            <span class="tag">Content</span>
+            <span class="tag">Strategy</span>
+            <span class="tag">Virality</span>
+          </div>
+        </div>
+
       </div>
-      <div>
-        <p class="stat-label">Type</p>
-        <p class="stat-value">Paid Internship</p>
-      </div>
-      <div>
-        <p class="stat-label">Open Roles</p>
-        <p class="stat-value">4 Positions</p>
+
+      <ul class="apply-checklist">
+        <li>Performance-based compensation — you earn what you produce</li>
+        <li>Direct access to real client accounts from day one</li>
+        <li>No hand-holding. High autonomy, high ceiling</li>
+        <li>Remote-first, flexible hours</li>
+      </ul>
+    </div>
+
+    <!-- RIGHT: form -->
+    <div class="col-right">
+      <h2 class="form-title">Prove it.</h2>
+      <p class="form-sub">No resume fluff. Tell us what you've actually done and why you're built for this.</p>
+
+      <form id="applyForm" onsubmit="handleSubmit(event)">
+        <input type="hidden" name="_subject" id="emailSubject" value="New Internship Application | Unifictional" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_template" value="table" />
+
+        <div class="field">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required />
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required />
+        </div>
+
+        <div class="field">
+          <label for="role">Role</label>
+          <select id="role" name="role" required onchange="syncRole(this.value)">
+            <option value="">Select a role…</option>
+            <option value="Sales Intern">Sales Intern</option>
+            <option value="Lead Generation Intern">Lead Generation Intern</option>
+            <option value="Marketing Intern">Marketing Intern</option>
+            <option value="Social Media Intern">Social Media Intern</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="message">Why you? Keep it sharp.</label>
+          <textarea id="message" name="message" placeholder="No fluff. Show us what you've got." required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">Apply ₒ</button>
+        <p class="form-error" id="formError">Something went wrong. Email us at hello@unifictional.com</p>
+      </form>
+
+      <div class="success-state" id="successState">
+        <div class="success-icon">✓</div>
+        <h3>Application received.</h3>
+        <p>We'll be in touch if there's a fit. Keep building.</p>
       </div>
     </div>
-  </section>
 
-  <hr class="section-divider" />
-
-  <!-- ROLES -->
-  <section class="roles-section">
-    <p class="section-label">01 // Open Positions</p>
-    <div class="roles-grid" id="rolesGrid">
-
-      <div class="role-card" data-role="Sales Intern" onclick="selectRole(this)">
-        <p class="role-num">01 //</p>
-        <h3 class="role-title">Sales Intern</h3>
-        <p class="role-desc">Close deals. Build a book of business. You own the pipeline from first contact to signed contract.</p>
-        <div class="role-tags">
-          <span class="tag">Outbound</span>
-          <span class="tag">CRM</span>
-          <span class="tag">Commission</span>
-        </div>
-      </div>
-
-      <div class="role-card" data-role="Lead Generation Intern" onclick="selectRole(this)">
-        <p class="role-num">02 //</p>
-        <h3 class="role-title">Lead Generation Intern</h3>
-        <p class="role-desc">Find the right people. Research, qualify, and feed a steady pipeline of vetted prospects to the sales team.</p>
-        <div class="role-tags">
-          <span class="tag">Research</span>
-          <span class="tag">Prospecting</span>
-          <span class="tag">Data</span>
-        </div>
-      </div>
-
-      <div class="role-card" data-role="Marketing Intern" onclick="selectRole(this)">
-        <p class="role-num">03 //</p>
-        <h3 class="role-title">Marketing Intern</h3>
-        <p class="role-desc">Build campaigns that convert. Own messaging, positioning, and the growth engine behind our client acquisition.</p>
-        <div class="role-tags">
-          <span class="tag">Campaigns</span>
-          <span class="tag">Copy</span>
-          <span class="tag">Growth</span>
-        </div>
-      </div>
-
-      <div class="role-card" data-role="Social Media Intern" onclick="selectRole(this)">
-        <p class="role-num">04 //</p>
-        <h3 class="role-title">Social Media Intern</h3>
-        <p class="role-desc">Make things people actually share. You're not scheduling posts — you're building a presence that moves.</p>
-        <div class="role-tags">
-          <span class="tag">Content</span>
-          <span class="tag">Strategy</span>
-          <span class="tag">Virality</span>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <hr class="section-divider" />
-
-  <!-- APPLY FORM -->
-  <section class="apply-section" id="apply">
-    <div class="apply-inner">
-
-      <div class="apply-copy">
-        <p class="section-label">02 // Apply</p>
-        <h2>Prove it.</h2>
-        <p>No resume fluff. No cover letter theatre. Tell us what you've actually done and why you're built for this.</p>
-        <ul class="apply-checklist">
-          <li>Performance-based compensation — you earn what you produce</li>
-          <li>Direct access to real client accounts from day one</li>
-          <li>No hand-holding. High autonomy, high ceiling</li>
-          <li>Remote-first, flexible hours</li>
-        </ul>
-      </div>
-
-      <div>
-        <!-- Form -->
-        <form id="applyForm" onsubmit="handleSubmit(event)">
-          <!-- Formsubmit config -->
-          <input type="hidden" name="_subject" id="emailSubject" value="New Internship Application | Unifictional" />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_template" value="table" />
-
-          <div class="field">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" placeholder="Your name" required />
-          </div>
-
-          <div class="field">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="your@email.com" required />
-          </div>
-
-          <div class="field">
-            <label for="role">Role</label>
-            <select id="role" name="role" required onchange="syncRole(this.value)">
-              <option value="">Select a role…</option>
-              <option value="Sales Intern">Sales Intern</option>
-              <option value="Lead Generation Intern">Lead Generation Intern</option>
-              <option value="Marketing Intern">Marketing Intern</option>
-              <option value="Social Media Intern">Social Media Intern</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="message">Why you? Keep it sharp.</label>
-            <textarea id="message" name="message" placeholder="No fluff. Show us what you've got." required></textarea>
-          </div>
-
-          <button type="submit" class="submit-btn" id="submitBtn">Apply →</button>
-          <p class="form-error" id="formError">Something went wrong. Email us at hello@unifictional.com</p>
-        </form>
-
-        <!-- Success State -->
-        <div class="success-state" id="successState">
-          <div class="success-icon">✓</div>
-          <h3>Application received.</h3>
-          <p>We'll be in touch if there's a fit. Keep building.</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
+  </div>
 
   <!-- FOOTER -->
   <footer>
@@ -498,7 +428,6 @@
   </footer>
 
   <script>
-    // ── Role card selection ──
     function selectRole(card) {
       document.querySelectorAll('.role-card').forEach(c => c.classList.remove('active'));
       card.classList.add('active');
@@ -506,19 +435,14 @@
       const select = document.getElementById('role');
       select.value = role;
       syncRole(role);
-      setTimeout(() => {
-        document.getElementById('apply').scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 200);
     }
 
-    // ── Sync select → subject ──
     function syncRole(role) {
       document.getElementById('emailSubject').value = role
-        ? `New Application — ${role} | Unifictional`
+        ? 'New Application — ' + role + ' | Unifictional'
         : 'New Internship Application | Unifictional';
     }
 
-    // ── Form submission via Formsubmit.co ──
     async function handleSubmit(e) {
       e.preventDefault();
       const btn = document.getElementById('submitBtn');
@@ -526,9 +450,7 @@
       errEl.style.display = 'none';
       btn.disabled = true;
       btn.textContent = 'Sending…';
-
       const formData = new FormData(e.target);
-
       try {
         const res = await fetch('https://formsubmit.co/ajax/rengarajan.darshan@gmail.com', {
           method: 'POST',
@@ -539,13 +461,11 @@
         if (json.success === 'true' || json.success === true) {
           document.getElementById('applyForm').style.display = 'none';
           document.getElementById('successState').classList.add('visible');
-        } else {
-          throw new Error('failed');
-        }
+        } else { throw new Error('failed'); }
       } catch {
         errEl.style.display = 'block';
         btn.disabled = false;
-        btn.textContent = 'Apply →+;
+        btn.textContent = 'Apply →';
       }
     }
   </script>
